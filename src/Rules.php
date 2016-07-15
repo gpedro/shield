@@ -26,10 +26,10 @@ class Rules implements RulesContract
         $type = mb_strtolower($type);
 
         switch ($type) {
-            case 'post':
+            case 'put':
                 return method_exists($this, 'creating') ? $this->creating() : [];
                 break;
-            case 'put':
+            case 'post':
                 return method_exists($this, 'updating') ? $this->updating() : [];
                 break;
             default:
